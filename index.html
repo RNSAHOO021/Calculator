@@ -1,0 +1,163 @@
+
+<!-- saved from url=(0045)http://127.0.0.1:5500/calcu.html?answer=4%2B5 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>Calculator</title>
+  <style>
+     h1 {
+      text-align: center;
+       padding: 18px; 
+      background-color: skyblue;
+      color: white;
+    } 
+    * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+    }
+
+    /* #clear {
+      width: 100px;
+      border: 3px solid gray;
+      border-radius: 3px;
+      padding: 5px;
+      background-color: red;
+    } */
+
+    .formstyle {
+      height: 536px;
+      width: 300px;
+      padding: 0;
+      border-radius: 5px;
+      box-shadow: 12px 12px 20px #cbced1,
+        -1px -12px 20px #ffffff;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border: 1px solid black;
+    }
+
+    input {
+      width: 60px;
+      background-color: #ffffff;
+      color: black;
+       border: 3px solid gray;
+      border-radius: 5px;
+      padding: 15px;
+      margin: 5px;
+      font-size: 15px;
+      box-shadow: 12px 12px 20px #cbced1,
+        -1px -12px 20px #ffffff;
+    }
+
+    #calc {
+      width: 280px;
+      border: 5px solid black;
+      border-radius: 2px;
+      padding: 20px;
+      margin: 10px;
+      text-align: right;
+      padding-right: 20px;
+      font-size: 30px;
+      color: #2f2f2f;
+      font-weight: 600;
+      display: flex;
+    }
+  </style>
+
+  <script>
+
+
+    function back() {
+      var value = document.getElementById("calc").value;
+      document.getElementById("calc").value = value.substr(0, value.length - 1);
+    }
+  </script>
+</head>
+
+<body>
+   <h1> Calculator Program in JavaScript </h1> 
+  <div class="formstyle">
+    <div class="display">
+    <form name="form1">
+
+      <input id="calc" type="text" name="answer"> <br> <br>
+      <!-- Display the calculator button on the screen. -->
+      <!-- onclick() function display the number prsses by the user. -->
+      <input type="button" value="AC" onclick="form1.answer.value = &#39; &#39; " id="clear" style="color: red;">
+      <input type="button" value="DEL" onclick="back();" id="clear" style="color: red;">
+      <input type="button" value="%" onclick="from1.answer.value += &#39;%&#39; " style="color: red;">
+      <input type="button" value="÷" onclick="form1.answer.value += &#39;÷&#39; " style="color: red;">
+      <input type="button" value="7" onclick="form1.answer.value += &#39;7&#39; ">
+      <input type="button" value="8" onclick="form1.answer.value += &#39;8&#39; ">
+      <input type="button" value="9" onclick="form1.answer.value += &#39;9&#39; ">
+      <input type="button" value="+" onclick="form1.answer.value += &#39;+&#39; " style="color: red;">
+      <br> <br>
+
+      <input type="button" value="4" onclick="form1.answer.value += &#39;4&#39; ">
+      <input type="button" value="5" onclick="form1.answer.value += &#39;5&#39; ">
+      <input type="button" value="6" onclick="form1.answer.value += &#39;6&#39; ">
+      <input type="button" value="-" onclick="form1.answer.value += &#39;-&#39; " style="color: red;">
+      <br> <br>
+
+      <input type="button" value="1" onclick="form1.answer.value += &#39;1&#39; ">
+      <input type="button" value="2" onclick="form1.answer.value += &#39;2&#39; ">
+      <input type="button" value="3" onclick="form1.answer.value += &#39;3&#39; ">
+      <input type="button" value="×" onclick="form1.answer.value += &#39;×&#39; " style="color: red;">
+      <br> <br>
+
+
+      <input type="button" value="0" onclick="form1.answer.value += &#39;0&#39; ">
+      <input type="button" value="00" onclick="form1.answer.value += &#39;00&#39; ">
+      <input type="button" value="." onclick="form1.answer.value += &#39;.&#39; ">
+      
+      <!-- When we click on the '=' button, the onclick() shows the sum results on the calculator screen. -->
+      <input type="button" value="=" onclick="form1.answer.value = eval(form1.answer.value) " style="background-color: red;">
+      <br>
+      <!-- Display the Cancel button and erase all data entered by the user. -->
+      <br>
+
+    </form>
+  </div>
+  </div>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+
+
+</body></html>
